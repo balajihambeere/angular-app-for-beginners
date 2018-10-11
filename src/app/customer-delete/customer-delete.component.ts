@@ -24,7 +24,7 @@ export class CustomerDeleteComponent implements OnInit {
         });
     }
 
-    delete(id: number) {
+    delete(id: string) {
         this.customerService.deleteCustomer(id).subscribe((data) => {
             this.message = "customer delete successfully";
         });

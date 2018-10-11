@@ -35,7 +35,7 @@ export class CustomerService {
         return this.http.post<Customer>(environment.api_url +'customer/'+ customer._id, customer, httpOptions)
     }
 
-    deleteCustomer(id: number): Observable<Customer> {
+    deleteCustomer(id: string): Observable<Customer> {
         return this.http.delete<Customer>(environment.api_url +'customer/' + id, httpOptions)
     }
 }

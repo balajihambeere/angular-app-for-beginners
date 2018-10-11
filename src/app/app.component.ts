@@ -7,6 +7,6 @@ import { CustomerService } from './customer.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'AngularCRUDApp';
+  title = 'Angular CRUD App';
   constructor() { }
 }

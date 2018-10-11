@@ -1,6 +1,6 @@
 <h2>You want to delete this Customer
     <input type="button" value="NO" (click)="goBack()">
-    <input type="button" value="YES" style="margin-left:5px;" (click)="delete(customer.id)">
+    <input type="button" value="YES" style="margin-left:5px;" (click)="delete(customer._id)">
 </h2>
 <h2 *ngIf="message" style="color:green">{{message}}
     <input type="button" value="OK" (click)="goBack()">
