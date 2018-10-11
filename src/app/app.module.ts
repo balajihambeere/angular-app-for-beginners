@@ -1,11 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 
-import { InMemoryDataService } from './in-memory-data.service';
 import { CustomerService } from './customer.service';
 import { AppComponent } from './app.component';
 import { CustomerListComponent } from './customer-list/customer-list.component';
@@ -34,23 +32,14 @@ const appRoutes: Routes = [
   ],
   imports: [
     BrowserModule,
-
     // import HttpClientModule after BrowserModule.
     HttpClientModule,
     FormsModule,
-    RouterModule.forRoot(appRoutes),
-
-    // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
-    // and returns simulated server responses.
-    HttpClientInMemoryWebApiModule.forRoot(
-      InMemoryDataService, { dataEncapsulation: false }
-    )
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [CustomerService],
   bootstrap: [AppComponent]
 })
 
-
 export class AppModule {
-
 }
