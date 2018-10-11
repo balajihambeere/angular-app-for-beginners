@@ -32,7 +32,7 @@ export class CustomerService {
 
     //update customers
     updateCustomer(customer: Customer): Observable<Customer> {
-        return this.http.post<Customer>(environment.api_url +'customer/'+ customer._id, customer, httpOptions)
+        return this.http.put<Customer>(environment.api_url +'customer/'+ customer._id, customer, httpOptions)
     }
 
     deleteCustomer(id: string): Observable<Customer> {

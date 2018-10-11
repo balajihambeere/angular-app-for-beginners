@@ -18,7 +18,6 @@ export class CustomerCreateComponent {
 
     }
     submit() {
-        this.customer._id = Math.floor((Math.random() * 1000) + 1);
         this.customerService.addCustomer(this.customer).subscribe((data) => {
             this.message = "Customer Added Successfully";
             setTimeout(() => {
