@@ -12,7 +12,6 @@ import { CustomerDetailsComponent } from './customer-details/customer-details.co
 import { CustomerEditComponent } from './customer-edit/customer-edit.component';
 import { CustomerDeleteComponent } from './customer-delete/customer-delete.component';
 
-//Route Configuration
 const appRoutes: Routes = [
   { path: 'customers', component: CustomerListComponent },
   { path: 'customer/details/:id', component: CustomerDetailsComponent },
@@ -20,7 +19,7 @@ const appRoutes: Routes = [
   { path: 'customer/edit/:id', component: CustomerEditComponent },
   { path: 'customer/delete/:id', component: CustomerDeleteComponent },
   { path: '', redirectTo: '/customers', pathMatch: 'full' }
-]
+];
 @NgModule({
   declarations: [
     AppComponent,
