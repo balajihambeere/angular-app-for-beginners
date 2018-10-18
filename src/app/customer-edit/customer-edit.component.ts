@@ -1,13 +1,18 @@
-import { Component, OnInit } from "@angular/core";
-import { CustomerService } from "../customer.service";
-import { Customer } from "../customer.model";
-import { Router, ActivatedRoute } from "@angular/router";
+import { Component, OnInit } from '@angular/core';
+import { CustomerService } from '../customer.service';
+import { Customer } from '../customer.model';
+import { Router, ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 
 @Component({
-    selector: 'customer-edit',
+    selector: 'app-customer-edit',
     templateUrl: './customer-edit.component.html',
-    styleUrls: ['./customer-edit.component.css']
+    styles: [`
+    .inputWidth {
+        line-height: 2em;
+        width:20em;
+        margin-bottom: 1em;
+    }`]
 })
 
 export class CustomerEditComponent implements OnInit {
@@ -23,14 +28,14 @@ export class CustomerEditComponent implements OnInit {
         const id = this.route.snapshot.paramMap.get('id');
         this.customerService.getCustomer(id).subscribe((data) => {
             this.customer = data;
-        })
+        });
     }
     submit() {
         this.customerService.updateCustomer(this.customer).subscribe((data) => {
-            this.message = "Customer Updated Successfully";
+            this.message = 'Customer Updated Successfully';
             setTimeout(() => {
 
-                this.router.navigate(['/customers'])
+                this.router.navigate(['/customers']);
             }, 500);
         });
     }
@@ -38,5 +43,4 @@ export class CustomerEditComponent implements OnInit {
     goBack(): void {
         this.location.back();
     }
-
 }
